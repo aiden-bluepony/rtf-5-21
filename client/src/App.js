@@ -8,8 +8,7 @@ function Dolly() {
   // This one makes the camera move in and out
   useFrame(({ clock, camera }) => {
     camera.lookAt(0,0,0)
-    // camera.position.z = 10 + Math.sin(clock.getElapsedTime())
-    camera.position.x = Math.abs(10 + Math.sin(clock.getElapsedTime()))
+    camera.position.x = 10 * Math.sin(100 + clock.getElapsedTime())
   })
   return null
 }
@@ -18,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <Canvas
-        camera={{position: [0,0,15]}}
+        camera={{position: [0,0,10]}}
       >
         <ambientLight/>
         <pointLight position={[10,10,10]}/>
